@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @patient %>
+
+<div>
+  <%= link_to "Edit this patient", edit_patient_path(@patient) %> |
+  <%= link_to "Back to patients", patients_path %>
+
+  <%= button_to "Destroy this patient", @patient, method: :delete %>
+</div>
+
+
+<div style = "text-align:center">
+<p style="color: blue "> to see all physician of  Patient <%= @patient.name  %>  please </p>
+
+  <%= link_to " click here ", patient_get_physician_path(@patient.id), remote: true %>
+
+<p style="color: blue ">  patient <%= @patient.name  %> has <%= @patient.physicians.count  %> physicians </p>
